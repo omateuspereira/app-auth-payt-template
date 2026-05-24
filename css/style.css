@@ -1,0 +1,92 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #555;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.erro {
+  color: #c00;
+  margin-top: 12px;
+  font-size: .9rem;
+}
+
+.sucesso {
+  color: #060;
+  margin-top: 12px;
+  font-size: .9rem;
+}
+
+/* Header da área logada */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header button {
+  width: auto;
+  padding: 8px 16px;
+  font-size: .875rem;
+}

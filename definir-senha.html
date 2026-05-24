@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Definir senha</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Criar senha de acesso</h1>
+    <p>Bem-vindo! Defina uma senha para acessar o treinamento.</p>
+
+    <form id="form-senha" style="display: none;">
+      <label for="senha">Nova senha</label>
+      <input id="senha" type="password" required minlength="6" autocomplete="new-password" />
+
+      <label for="confirmar-senha">Confirmar senha</label>
+      <input id="confirmar-senha" type="password" required minlength="6" autocomplete="new-password" />
+
+      <button type="submit">Salvar senha</button>
+    </form>
+
+    <p id="erro" class="erro" aria-live="polite"></p>
+    <p id="sucesso" class="sucesso" aria-live="polite"></p>
+
+    <!-- Exibido enquanto aguarda o Supabase processar os tokens da URL -->
+    <p id="carregando">Verificando seu link de acesso...</p>
+  </div>
+
+  <script type="module">
+    import { supabase } from '/js/supabase-client.js'
+
+    const form = document.getElementById('form-senha')
+    const erro = document.getElementById('erro')
+    const sucesso = document.getElementById('sucesso')
+    const carregando = document.getElementById('carregando')
+
+    // Supabase dispara eventos diferentes dependendo do tipo de link:
+    // - invite  → SIGNED_IN
+    // - recovery → PASSWORD_RECOVERY
+    // - redirecionado do index.html → INITIAL_SESSION (sessão já no localStorage)
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (session && ['SIGNED_IN', 'PASSWORD_RECOVERY', 'INITIAL_SESSION'].includes(event)) {
+        carregando.style.display = 'none'
+        form.style.display = 'block'
+      }
+    })
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      erro.textContent = ''
+
+      const senha = document.getElementById('senha').value
+      const confirmar = document.getElementById('confirmar-senha').value
+
+      if (senha !== confirmar) {
+        erro.textContent = 'As senhas não coincidem.'
+        return
+      }
+
+      const btn = form.querySelector('button')
+      btn.disabled = true
+      btn.textContent = 'Salvando...'
+
+      const { error } = await supabase.auth.updateUser({ password: senha })
+
+      if (error) {
+        erro.textContent = error.message
+        btn.disabled = false
+        btn.textContent = 'Salvar senha'
+        return
+      }
+
+      sucesso.textContent = 'Senha definida com sucesso! Redirecionando...'
+      setTimeout(() => {
+        window.location.href = '/treinamento.html'
+      }, 2000)
+    })
+  </script>
+</body>
+</html>
