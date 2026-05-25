@@ -3,20 +3,369 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Treinamento</title>
+  <title>Renda com Bolsas — Área de Membros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
+
   <header class="header">
-    <span id="user-email"></span>
-    <button id="btn-logout">Sair</button>
+    <div class="header-brand">
+      <div class="header-dot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </div>
+      Renda com Bolsas
+    </div>
+    <div class="header-right">
+      <span id="user-email"></span>
+      <button id="btn-logout" class="btn-logout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Sair
+      </button>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>Bem-vindo ao treinamento!</h1>
-    <!-- Conteúdo dos módulos vai aqui -->
-  </main>
+  <!-- VIEW: PRINCIPAL -->
+  <div id="modules-view">
+
+    <section class="training-hero-full">
+      <div class="thf-deco thf-deco-1"></div>
+      <div class="thf-deco thf-deco-2"></div>
+      <div class="training-hero-inner">
+        <span class="training-hero-tag">Área de Membros</span>
+        <h2 id="greeting" class="training-hero-title">Bem-vinda!</h2>
+        <p class="training-hero-sub">Tudo que você precisa para criar e vender suas bolsas está aqui.</p>
+        <div class="training-hero-pills">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Aulas em vídeo
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Livro digital
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Links de materiais
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <div class="training-body">
+      <div class="carousel-wrap">
+        <button class="carousel-arrow arrow-left" id="btn-prev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="all-cards-grid" id="modules-row">
+
+        <!--
+          ── MÓDULOS ──
+          Para adicionar módulo com imagem de capa:
+          <div class="module-card-poster" data-module="1" data-type="video">
+            <div class="card-bg" style="background-image:url('capa.jpg')"></div>
+            <div class="card-overlay"></div>
+            <span class="card-badge">Módulo 1</span>
+            <div class="card-body">
+              <div class="card-subtitle">Por onde</div>
+              <div class="card-title">Começar</div>
+            </div>
+          </div>
+
+          ── MATERIAIS ──
+          <div class="module-card-poster" data-type="pdf" data-url="arquivo.pdf">
+            <div class="card-bg" style="background:linear-gradient(150deg,#E8C4A0 0%,#9E5E3F 100%)"></div>
+            <div class="card-overlay"></div>
+            <span class="card-badge">PDF</span>
+            <div class="card-body">
+              <div class="card-subtitle">Material de apoio</div>
+              <div class="card-title">Nome do PDF</div>
+            </div>
+          </div>
+
+          ── FORNECEDORES ──
+          <div class="module-card-poster" data-type="link" data-url="https://fornecedor.com">
+            <div class="card-bg" style="background:linear-gradient(150deg,#B0C4A0 0%,#4A7C59 100%)"></div>
+            <div class="card-overlay"></div>
+            <span class="card-badge">Fornecedor</span>
+            <div class="card-body">
+              <div class="card-subtitle">Tecidos e aviamentos</div>
+              <div class="card-title">Nome do Fornecedor</div>
+            </div>
+          </div>
+        -->
+
+        <div class="module-card-poster" data-module="1" data-type="video">
+          <div class="card-bg" style="background-image:url('https://i.ibb.co/MxYqYv3S/passo-passo.png')"></div>
+          <div class="card-overlay"></div>
+          <span class="card-badge">Módulo 1</span>
+          <div class="card-body">
+            <div class="card-subtitle">Módulo 1</div>
+            <div class="card-title">Passo a Passo Completo</div>
+          </div>
+        </div>
+
+        <div class="module-card-poster" data-type="pdf" data-url="/MBE - Metodo Bolsa Europeia.pdf">
+          <div class="card-bg" style="background-image:url('https://i.ibb.co/bRJ10gHD/book.png')"></div>
+          <div class="card-overlay"></div>
+          <span class="card-badge">PDF</span>
+          <div class="card-body">
+            <div class="card-subtitle">Módulo 2</div>
+            <div class="card-title">Livro Bolsa Europeia</div>
+          </div>
+        </div>
+
+        <div class="module-card-poster" data-type="links" data-module="3">
+          <div class="card-bg" style="background-image:url('https://i.ibb.co/5g5XjRTx/links.png')"></div>
+          <div class="card-overlay"></div>
+          <span class="card-badge">Materiais</span>
+          <div class="card-body">
+            <div class="card-subtitle">Módulo 3</div>
+            <div class="card-title">Links de Materiais</div>
+          </div>
+        </div>
+
+
+      </div>
+        <button class="carousel-arrow arrow-right" id="btn-next" aria-label="Próximo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW: LINKS DE MATERIAIS -->
+  <div id="links-view">
+    <div class="links-layout">
+      <div class="links-header">
+        <button class="sidebar-back" id="btn-back-from-links">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Voltar
+        </button>
+        <div>
+          <h2 class="links-title" id="links-title">Links de Materiais</h2>
+          <p class="links-sub">Clique para abrir a loja</p>
+        </div>
+      </div>
+      <div class="links-grid" id="links-grid"></div>
+    </div>
+  </div>
+
+  <!-- VIEW: PLAYER -->
+  <div id="player-view">
+    <div class="player-layout">
+
+      <aside class="player-sidebar">
+        <div class="sidebar-back" id="btn-back-modules">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Voltar
+        </div>
+        <div class="sidebar-module-title" id="sidebar-module-title">Módulo</div>
+        <div class="sidebar-lessons" id="sidebar-lessons"></div>
+      </aside>
+
+      <main class="player-main">
+        <div class="player-video-wrap" id="player-video-wrap"></div>
+        <div class="player-info">
+          <h3 id="player-lesson-title">Selecione uma aula</h3>
+          <p id="player-lesson-desc"></p>
+        </div>
+      </main>
+
+    </div>
+  </div>
 
   <script type="module" src="/js/treinamento.js"></script>
+
+  <script>
+    const ICONS = {
+      video: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+      pdf:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+      link:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    }
+
+    // ─────────────────────────────────────────────────────
+    //  DADOS DOS MÓDULOS
+    //  type 'vturb' → player VTurb/Converteai
+    //  type 'video' → YouTube/Vimeo (url com embed)
+    //  type 'pdf'   → abre PDF em nova aba
+    // ─────────────────────────────────────────────────────
+    const modules = {
+      1: {
+        title: 'Passo a Passo Completo',
+        lessons: [
+          { title: 'Passo a Passo Completo', type: 'vturb', vturbId: '6a13d23dc702f9fe1cf2c011' },
+        ]
+      },
+    }
+
+    const linksData = {
+      3: {
+        title: 'Links de Materiais',
+        items: [
+          { name: 'Fio Náutico 5mm Premium', desc: 'Para bolsas — entrega rápida, várias cores', url: 'https://shopee.com.br/Fio-Nautico-5mm-Premium-500G-Para-Bolsa-Entrega-R%C3%A1pida-LIndas-Cores-i.1434670511.23098650301?extraParams=%7B%22display_model_id%22%3A229423561467%2C%22model_selection_logic%22%3A3%7D&sp_atk=f1436804-b68a-4a50-b853-a934dedd19a8&xptdk=f1436804-b68a-4a50-b853-a934dedd19a8&is_from_login=true' },
+          { name: 'Tesoura Multiuso Aço Inox 25cm', desc: 'Para tecido e costura — Vonder', url: 'https://shopee.com.br/Tesoura-Multiuso-A%C3%A7o-Inox-25cm-Cozinha-Tecido-Vonder-i.324667601.23393403035?extraParams=%7B%22display_model_id%22%3A109866066798%2C%22model_selection_logic%22%3A3%7D&rModelId=109866066798&sp_atk=ea696437-117c-4f62-990d-fdc8f3148dfc&vItemId=22094909063&vModelId=179414188459&vShopId=1665239494&xptdk=ea696437-117c-4f62-990d-fdc8f3148dfc' },
+          { name: 'Tela para Bolsas', desc: 'Tela específica para confecção de bolsas', url: 'https://shopee.com.br/product/1532702757/22698676137?exp_group=rollout' },
+          { name: 'Fecho para Bolsas', desc: 'Fecho resistente para acabamento profissional', url: 'https://shopee.com.br/Fecho-Para-Bolsa-i.1264109473.58206822389?extraParams=%7B%22display_model_id%22%3A239439404967%2C%22model_selection_logic%22%3A3%7D&sp_atk=cbf7ae36-5303-407a-a2e8-49894e83826d&xptdk=cbf7ae36-5303-407a-a2e8-49894e83826d' },
+          { name: 'Tecido Tricoline', desc: 'Tecido de algodão ideal para forro e detalhes', url: 'https://s.shopee.com.br/an_redir?affiliate_id=18142050008&sub_id=YT3-9tGndOXp3eEItivBp2P2K_uKe32RFQbA79D0orCagcc2q8UYxj6VE-CVZzp4dO5AVS9MkxnGmGDYK3lGSGoP5_2XCpOQaT8qsFeN&origin_link=https%3A%2F%2Fshopee.com.br%2Fproduct%2F539274410%2F58205624242' },
+        ]
+      }
+    }
+
+    const modulesView    = document.getElementById('modules-view')
+    const linksView      = document.getElementById('links-view')
+    const linksGrid      = document.getElementById('links-grid')
+    const linksTitleEl   = document.getElementById('links-title')
+    const playerView     = document.getElementById('player-view')
+    const sidebarTitle   = document.getElementById('sidebar-module-title')
+    const sidebarLessons = document.getElementById('sidebar-lessons')
+    const playerWrap     = document.getElementById('player-video-wrap')
+    const playerTitle    = document.getElementById('player-lesson-title')
+    const playerDesc     = document.getElementById('player-lesson-desc')
+
+    document.querySelectorAll('.module-card-poster').forEach(card => {
+      card.addEventListener('click', () => {
+        const type = card.dataset.type
+
+        // PDF abre direto
+        if (type === 'pdf') {
+          const url = card.dataset.url
+          if (url) window.open(url, '_blank')
+          return
+        }
+
+        // Links — abre a view de materiais
+        if (type === 'links') {
+          const id   = card.dataset.module
+          const data = linksData[id]
+          if (!data) return
+
+          linksTitleEl.textContent = data.title
+          linksGrid.innerHTML = data.items.map(item => `
+            <a class="link-card" href="${item.url}" target="_blank" rel="noopener">
+              <div class="link-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+              <div class="link-card-body">
+                <div class="link-card-name">${item.name}</div>
+                <div class="link-card-desc">${item.desc}</div>
+              </div>
+              <div class="link-card-cta">
+                Abrir loja
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </div>
+            </a>`).join('')
+
+          modulesView.style.display = 'none'
+          linksView.classList.add('active')
+          window.scrollTo({ top: 0, behavior: 'instant' })
+          return
+        }
+
+        // Vídeo — abre o player
+        const id  = card.dataset.module
+        const mod = modules[id]
+
+        sidebarTitle.textContent = mod ? mod.title : `Módulo ${id}`
+        sidebarLessons.innerHTML = ''
+
+        if (!mod || !mod.lessons || mod.lessons.length === 0) {
+          sidebarLessons.innerHTML = `
+            <div style="padding:24px 20px;font-size:.875rem;color:var(--text-muted);text-align:center;line-height:1.6;">
+              As aulas deste módulo serão adicionadas em breve.
+            </div>`
+          setPlaceholder()
+          playerTitle.textContent = `Módulo ${id}`
+          playerDesc.textContent  = ''
+        } else {
+          mod.lessons.forEach((lesson, i) => {
+            const el = document.createElement('div')
+            el.className = 'sidebar-lesson'
+            el.innerHTML = `
+              <div class="sl-number">${i + 1}</div>
+              <span class="sl-title">${lesson.title}</span>
+              <span class="sl-icon">${ICONS[lesson.type] || ICONS.video}</span>`
+            el.addEventListener('click', () => loadLesson(el, lesson))
+            sidebarLessons.appendChild(el)
+          })
+          loadLesson(sidebarLessons.firstElementChild, mod.lessons[0])
+        }
+
+        modulesView.style.display = 'none'
+        playerView.classList.add('active')
+        window.scrollTo({ top: 0, behavior: 'instant' })
+      })
+    })
+
+    function loadLesson(el, lesson) {
+      document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'))
+      el.classList.add('active')
+      playerTitle.textContent = lesson.title
+      playerDesc.textContent  = lesson.desc || ''
+
+      if (lesson.type === 'vturb') {
+        // remove script anterior e o elemento para forçar reinicialização
+        const scriptId = `vturb-${lesson.vturbId}`
+        document.getElementById(scriptId)?.remove()
+        playerWrap.innerHTML = `<vturb-smartplayer id="vid-${lesson.vturbId}" style="display:block;width:100%;height:100%;"></vturb-smartplayer>`
+
+        const s = document.createElement('script')
+        s.id    = scriptId
+        s.src   = `https://scripts.converteai.net/e5aa099d-8dcd-4d08-9db6-656f1e3b4f3c/players/${lesson.vturbId}/v4/player.js`
+        s.async = true
+        document.head.appendChild(s)
+      } else if (lesson.url) {
+        playerWrap.innerHTML = `<iframe src="${lesson.url}" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture"></iframe>`
+      } else {
+        setPlaceholder(lesson.type)
+      }
+    }
+
+    function setPlaceholder(type) {
+      const msg = type === 'pdf' ? 'PDF será disponibilizado em breve.' : 'Vídeo será adicionado em breve.'
+      playerWrap.innerHTML = `
+        <div class="player-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <p>${msg}</p>
+        </div>`
+    }
+
+    // ── Setas do carrossel ──
+    const row = document.getElementById('modules-row')
+    const SCROLL = 320
+
+    document.getElementById('btn-prev').addEventListener('click', () => {
+      row.scrollBy({ left: -SCROLL, behavior: 'smooth' })
+    })
+    document.getElementById('btn-next').addEventListener('click', () => {
+      row.scrollBy({ left: SCROLL, behavior: 'smooth' })
+    })
+
+    document.getElementById('btn-back-modules').addEventListener('click', () => {
+      playerView.classList.remove('active')
+      modulesView.style.display = ''
+      playerWrap.innerHTML = ''
+    })
+
+    document.getElementById('btn-back-from-links').addEventListener('click', () => {
+      linksView.classList.remove('active')
+      modulesView.style.display = ''
+    })
+  </script>
+
 </body>
 </html>

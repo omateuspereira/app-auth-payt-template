@@ -3,43 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Definir senha</title>
+  <title>Renda com Bolsas — Criar senha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-  <div class="container">
-    <h1>Criar senha de acesso</h1>
-    <p>Bem-vindo! Defina uma senha para acessar o treinamento.</p>
+<body class="login-page">
 
-    <form id="form-senha" style="display: none;">
-      <label for="senha">Nova senha</label>
-      <input id="senha" type="password" required minlength="6" autocomplete="new-password" />
+  <div class="login-split">
 
-      <label for="confirmar-senha">Confirmar senha</label>
-      <input id="confirmar-senha" type="password" required minlength="6" autocomplete="new-password" />
+    <!-- LADO ESQUERDO — brand -->
+    <div class="login-left">
+      <div class="login-left-deco deco-1"></div>
+      <div class="login-left-deco deco-2"></div>
+      <div class="login-left-deco deco-3"></div>
 
-      <button type="submit">Salvar senha</button>
-    </form>
+      <div class="login-left-inner">
+        <div class="login-left-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
 
-    <p id="erro" class="erro" aria-live="polite"></p>
-    <p id="sucesso" class="sucesso" aria-live="polite"></p>
+        <div class="login-left-tag">Quase lá!</div>
 
-    <!-- Exibido enquanto aguarda o Supabase processar os tokens da URL -->
-    <p id="carregando">Verificando seu link de acesso...</p>
+        <h1 class="login-left-headline">Crie sua senha e comece a aprender</h1>
+
+        <p class="login-left-sub">Você está a um passo de acessar o método completo para criar bolsas de tela e transformar seu talento em renda.</p>
+
+        <ul class="login-benefits">
+          <li>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div>
+              <strong>Aulas em vídeo</strong>
+              <span>Passo a passo completo do zero</span>
+            </div>
+          </li>
+          <li>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <strong>Livro digital completo</strong>
+              <span>Método Bolsa Europeia em PDF</span>
+            </div>
+          </li>
+          <li>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div>
+              <strong>Links de materiais</strong>
+              <span>Fornecedores selecionados pra você</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LADO DIREITO — formulário -->
+    <div class="login-right">
+      <div class="login-right-inner">
+        <div class="login-right-brand">
+          <div class="login-logo-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <span>Renda com Bolsas</span>
+        </div>
+
+        <div class="login-form-header">
+          <h2>Crie sua senha</h2>
+          <p>Escolha uma senha segura para acessar o conteúdo</p>
+        </div>
+
+        <form id="form-senha" style="display: none;">
+          <label for="senha">Nova senha</label>
+          <input id="senha" type="password" placeholder="••••••••" required minlength="6" autocomplete="new-password" />
+
+          <label for="confirmar-senha">Confirmar senha</label>
+          <input id="confirmar-senha" type="password" placeholder="••••••••" required minlength="6" autocomplete="new-password" />
+
+          <button type="submit">Salvar e entrar</button>
+        </form>
+
+        <p id="erro" class="erro" aria-live="polite"></p>
+        <p id="sucesso" class="sucesso" aria-live="polite"></p>
+        <p id="carregando" style="font-size: .875rem; color: var(--text-muted);">Verificando seu link de acesso…</p>
+      </div>
+    </div>
+
   </div>
 
   <script type="module">
     import { supabase } from '/js/supabase-client.js'
 
-    const form = document.getElementById('form-senha')
-    const erro = document.getElementById('erro')
-    const sucesso = document.getElementById('sucesso')
+    const form       = document.getElementById('form-senha')
+    const erro       = document.getElementById('erro')
+    const sucesso    = document.getElementById('sucesso')
     const carregando = document.getElementById('carregando')
 
-    // Supabase dispara eventos diferentes dependendo do tipo de link:
-    // - invite  → SIGNED_IN
-    // - recovery → PASSWORD_RECOVERY
-    // - redirecionado do index.html → INITIAL_SESSION (sessão já no localStorage)
     supabase.auth.onAuthStateChange((event, session) => {
       if (session && ['SIGNED_IN', 'PASSWORD_RECOVERY', 'INITIAL_SESSION'].includes(event)) {
         carregando.style.display = 'none'
@@ -51,7 +122,7 @@
       e.preventDefault()
       erro.textContent = ''
 
-      const senha = document.getElementById('senha').value
+      const senha     = document.getElementById('senha').value
       const confirmar = document.getElementById('confirmar-senha').value
 
       if (senha !== confirmar) {
@@ -61,21 +132,19 @@
 
       const btn = form.querySelector('button')
       btn.disabled = true
-      btn.textContent = 'Salvando...'
+      btn.textContent = 'Salvando…'
 
       const { error } = await supabase.auth.updateUser({ password: senha })
 
       if (error) {
         erro.textContent = error.message
         btn.disabled = false
-        btn.textContent = 'Salvar senha'
+        btn.textContent = 'Salvar e entrar'
         return
       }
 
-      sucesso.textContent = 'Senha definida com sucesso! Redirecionando...'
-      setTimeout(() => {
-        window.location.href = '/treinamento.html'
-      }, 2000)
+      sucesso.textContent = 'Senha definida! Redirecionando…'
+      setTimeout(() => { window.location.href = '/treinamento.html' }, 2000)
     })
   </script>
 </body>

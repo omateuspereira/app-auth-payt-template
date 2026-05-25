@@ -3,41 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entrar</title>
+  <title>Renda com Bolsas — Entrar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-  <div class="container">
-    <h1>Entrar</h1>
+<body class="login-page">
 
-    <form id="form-login">
-      <label for="email">E-mail</label>
-      <input id="email" type="email" required autocomplete="email" />
+  <div class="login-split">
 
-      <label for="senha">Senha</label>
-      <input id="senha" type="password" required autocomplete="current-password" />
+    <!-- LADO ESQUERDO — brand -->
+    <div class="login-left">
+      <div class="login-left-deco deco-1"></div>
+      <div class="login-left-deco deco-2"></div>
+      <div class="login-left-deco deco-3"></div>
 
-      <button type="submit">Entrar</button>
-    </form>
+      <div class="login-left-inner">
+        <div class="login-left-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
 
-    <p id="erro" class="erro" aria-live="polite"></p>
+        <div class="login-left-tag">Área exclusiva de alunos</div>
+
+        <h1 class="login-left-headline">Crie bolsas de tela e transforme seu talento em renda</h1>
+
+        <p class="login-left-sub">Tudo que você precisa para começar e vender — aulas, livro e fornecedores — em um só lugar.</p>
+
+        <ul class="login-benefits">
+          <li>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div>
+              <strong>Aulas em vídeo</strong>
+              <span>Passo a passo completo do zero</span>
+            </div>
+          </li>
+          <li>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <strong>Livro digital completo</strong>
+              <span>Método Bolsa Europeia em PDF</span>
+            </div>
+          </li>
+          <li>
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div>
+              <strong>Links de materiais</strong>
+              <span>Fornecedores selecionados pra você</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LADO DIREITO — formulário -->
+    <div class="login-right">
+      <div class="login-right-inner">
+        <div class="login-right-brand">
+          <div class="login-logo-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <span>Renda com Bolsas</span>
+        </div>
+
+        <div class="login-form-header">
+          <h2>Bem-vinda de volta</h2>
+          <p>Entre na sua conta para acessar o conteúdo</p>
+        </div>
+
+        <form id="form-login">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="seu@email.com" required autocomplete="email" />
+
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" placeholder="••••••••" required autocomplete="current-password" />
+
+          <button type="submit">Entrar na minha conta</button>
+        </form>
+
+        <p id="erro" class="erro" aria-live="polite"></p>
+      </div>
+    </div>
+
   </div>
 
   <script type="module">
     import { getSession, signIn } from '/js/auth.js'
 
-    // Verifica o hash ANTES do Supabase processá-lo
-    // Links de invite e recovery devem ir para definir-senha.html
     const hashParams = new URLSearchParams(window.location.hash.slice(1))
     if (['recovery', 'invite'].includes(hashParams.get('type'))) {
       window.location.replace('/definir-senha.html' + window.location.hash)
     }
 
-    // Se já está logado, vai direto pra área de membros
     const session = await getSession()
-    if (session) {
-      window.location.href = '/treinamento.html'
-    }
+    if (session) window.location.href = '/treinamento.html'
 
     const form = document.getElementById('form-login')
     const erro = document.getElementById('erro')
@@ -45,23 +118,21 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
       erro.textContent = ''
-
       const btn = form.querySelector('button')
       btn.disabled = true
-      btn.textContent = 'Entrando...'
+      btn.textContent = 'Entrando…'
 
-      const email = document.getElementById('email').value
-      const senha = document.getElementById('senha').value
-
-      const { error } = await signIn(email, senha)
+      const { error } = await signIn(
+        document.getElementById('email').value,
+        document.getElementById('senha').value
+      )
 
       if (error) {
         erro.textContent = 'E-mail ou senha inválidos.'
         btn.disabled = false
-        btn.textContent = 'Entrar'
+        btn.textContent = 'Entrar na minha conta'
         return
       }
-
       window.location.href = '/treinamento.html'
     })
   </script>
